@@ -8,8 +8,8 @@ const server = fastify({});
 
 server
   .register(FastifyBodyParser)
-  .all("/webhook", async (req, reply) => {
-    console.log("** Webhook received **\n");
+  .all("/status-callback", async (req, reply) => {
+    console.log("** Status Callback received **\n");
     logHeaders(req.body);
 
     const response = new MessagingResponse();
